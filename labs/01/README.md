@@ -1,5 +1,11 @@
 # Lab 01 instructions
 
+## Run the code
+Since this is a python script then
+    ```
+        $ python asm-analytics.sh log
+
+    ```
 ## Objective
 
 Make the students get familiar with the compiler tools and some basics as sw
