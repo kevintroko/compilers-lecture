@@ -1,3 +1,6 @@
+## Kevin Oswaldo Cabrera Navarro
+## https://github.com/kevintroko/compilers-lecture/blob/master/labs/01/asm-analytics.sh
+
 import sys
 import re
 
