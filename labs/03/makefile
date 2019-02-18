@@ -1,6 +1,6 @@
 all:
-	# python3 code_generator.py > example.ac
+	python3 code_generator.py > example.ac
 	gcc lex.c -o lex
 	./lex example.ac
-clean:
+clear:
 	rm -rf lex
