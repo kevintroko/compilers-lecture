@@ -10,6 +10,7 @@ https://github.com/kevintroko/compilers-lecture/tree/master/labs/03
 #include <stdlib.h>
 #include <regex.h>
 #include <string.h>
+#include <time.h>
 
 #define RE_NUM "^([1-9]+)[0-9]*$"
 #define RE_NUM_FLOAT "^[1-9]+.[0-9]+"
@@ -23,11 +24,17 @@ https://github.com/kevintroko/compilers-lecture/tree/master/labs/03
 #define RE_DIV "[/]"
 #define RE_SUB "[-]"
 #define RE_COMMENT "^[//]"
-    char *readFile(char *file_name);
+
+char *readFile(char *file_name);
 int match(const char *string, const char *pattern);
 
 int main(int argc, char *argv[]) {
+    clock_t t;
+    t = clock();
     readFile(argv[1]);
+    t = clock() - t;
+    double time_taken = ((double)t) / CLOCKS_PER_SEC; // in seconds
+    printf("Compiler.l took %f seconds to execute \n", time_taken);
     return 0;
 }
 
@@ -102,3 +109,15 @@ int match(const char *string, const char *pattern) {
     return 1;
 
 }
+
+/*
+    extern FILE *yyin, *yyout; 
+    clock_t t; 
+    t = clock(); 
+    yyin = fopen("example.ac", "r"); 
+    yylex(); 
+    t = clock() - t; 
+    double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds 
+    printf("Compiler.l took %f seconds to execute \n", time_taken); 
+    return 0; 
+*/
