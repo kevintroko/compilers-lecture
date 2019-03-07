@@ -1,0 +1,6 @@
+S - A | B 
+A - a 
+F - f
+B - B b
+C - c
+D - d
